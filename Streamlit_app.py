@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-#from pdf2image import convert_from_path
-#import pytesseract
+from pdf2image import convert_from_path
+import pytesseract
 from PyPDF2 import PdfReader
 from langchain.agents import create_csv_agent
 from langchain.llms import OpenAI
