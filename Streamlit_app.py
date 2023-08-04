@@ -1,12 +1,12 @@
 import streamlit as st
 import pandas as pd
 #from pdf2image import convert_from_path
-import pytesseract
+#import pytesseract
 from PyPDF2 import PdfReader
 from langchain.agents import create_csv_agent
 from langchain.llms import OpenAI
 import os
-from apikey import apikey
+#from apikey import apikey
 from langchain.document_loaders import TextLoader
 from langchain.indexes import VectorstoreIndexCreator
 import time
