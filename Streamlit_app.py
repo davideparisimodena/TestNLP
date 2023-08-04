@@ -6,12 +6,11 @@ from PyPDF2 import PdfReader
 from langchain.agents import create_csv_agent
 from langchain.llms import OpenAI
 import os
-#from apikey import apikey
 from langchain.document_loaders import TextLoader
 from langchain.indexes import VectorstoreIndexCreator
 import time
 
-os.environ['OPENAI_API_KEY'] = apikey
+os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
 llm = OpenAI(temperature=0.1)
 
