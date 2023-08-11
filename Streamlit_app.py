@@ -62,7 +62,7 @@ def main():
         elif file.type == "application/pdf":
             doc = "text"
             data = load_pdf_data(file)
-            loader = TextLoader('output.txt')
+            loader = TextLoader('uploaded_file.pdf')
             index = VectorstoreIndexCreator().from_loaders([loader])
 
         # do something with the data
