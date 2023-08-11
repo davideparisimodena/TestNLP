@@ -4,3 +4,4 @@ pytesseract
 PyPDF2
 langchain
 openai
+chromadb
