@@ -64,7 +64,7 @@ def load_pdf_data(uploaded_file):
     text = ""
     for page in pdf.pages:
         text += page.extract_text()
-    pdf_to_text('uploaded_file.pdf')
+    #pdf_to_text('uploaded_file.pdf')
     return text
 
 def main():
