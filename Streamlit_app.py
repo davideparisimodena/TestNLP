@@ -34,8 +34,8 @@ def pdf_to_text(pdf_path):
             text = pytesseract.image_to_string(image_file)
 
             f.write(text + '\n')  # Write the text to the file and add a newline for each page
-
-
+'''
+'''
 def pdf_to_text(pdf_path):
 	"extract text (pages) from pdf file"
 	pages = []
