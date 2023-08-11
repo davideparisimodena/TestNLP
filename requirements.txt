@@ -5,3 +5,4 @@ PyPDF2
 langchain
 openai
 chromadb
+sqlite3 == 3.35.0
