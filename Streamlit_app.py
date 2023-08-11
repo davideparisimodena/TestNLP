@@ -1,3 +1,5 @@
+__import__('pysqlite3')
+import sys
 import streamlit as st
 import pandas as pd
 from pdf2image import convert_from_path
@@ -9,6 +11,8 @@ import os
 from langchain.document_loaders import TextLoader
 from langchain.indexes import VectorstoreIndexCreator
 import time
+
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
