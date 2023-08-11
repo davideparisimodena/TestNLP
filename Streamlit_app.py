@@ -19,33 +19,6 @@ os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
 llm = OpenAI(temperature=0.1)
 
-'''
-def pdf_to_text(pdf_path):
-    # Step 1: Convert PDF to images
-    images = convert_from_path(pdf_path)
-
-    with open('output.txt', 'w') as f:  # Open the text file in write mode
-        for i, image in enumerate(images):
-            # Save pages as images in the pdf
-            image_file = f'page{i}.jpg'
-            image.save(image_file, 'JPEG')
-
-            # Step 2: Use OCR to extract text from images
-            text = pytesseract.image_to_string(image_file)
-
-            f.write(text + '\n')  # Write the text to the file and add a newline for each page
-'''
-'''
-def pdf_to_text(pdf_path):
-	"extract text (pages) from pdf file"
-	pages = []
-	pdf = pypdf.PdfReader(pdf_path)
-	for p in range(len(pdf.pages)):
-		page = pdf.pages[p]
-		text = page.extract_text()
-		pages += [text]
-	return pages
-'''
 def load_csv_data(uploaded_file):
     df = pd.read_csv(uploaded_file)
     df.to_csv("uploaded_file.csv")
