@@ -25,20 +25,19 @@ def load_csv_data(uploaded_file):
     df.to_csv("uploaded_file.csv")
     return df
 
-
 def load_txt_data(uploaded_file):
     with open('uploaded_file.txt', 'w') as f:
         f.write(uploaded_file.getvalue().decode())
     return uploaded_file.getvalue().decode()
 
 def load_pdf_data(uploaded_file):
-    with open('uploaded_file.txt', 'wb') as f:
+    with open('uploaded_file.pdf', 'wb') as f:
         f.write(uploaded_file.getbuffer())
     pdf = PdfReader('uploaded_file.pdf')
     text = ""
     for page in pdf.pages:
         text += page.extract_text()
-    #pdf_to_text('uploaded_file.pdf')
+    pdf_to_text('uploaded_file.pdf')
     return text
 
 def main():
