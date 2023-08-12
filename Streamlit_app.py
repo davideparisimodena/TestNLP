@@ -31,7 +31,7 @@ def load_txt_data(uploaded_file):
     return uploaded_file.getvalue().decode()
 
 def load_pdf_data(uploaded_file):
-    with open('uploaded_file.pdf', 'wb') as f:
+    with open('uploaded_file.txt', 'wb') as f:
         f.write(uploaded_file.getbuffer())
     pdf = PdfReader('uploaded_file.pdf')
     text = ""
