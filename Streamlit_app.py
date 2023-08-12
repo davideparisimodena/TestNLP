@@ -11,6 +11,7 @@ import os
 from langchain.document_loaders import TextLoader
 from langchain.indexes import VectorstoreIndexCreator
 import time
+from langchain.document_loaders import PyPDFLoader
 #import pypdf
 
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
@@ -60,9 +61,10 @@ def main():
             index = VectorstoreIndexCreator().from_loaders([loader])
 
         elif file.type == "application/pdf":
-            doc = "text"
-            data = load_pdf_data(file)
-            loader = TextLoader('uploaded_file.pdf')
+            #doc = "text"
+            #data = load_pdf_data(file)
+            #loader = TextLoader('uploaded_file.pdf')
+            loader = PyPDFLoader(file)
             index = VectorstoreIndexCreator().from_loaders([loader])
 
         # do something with the data
